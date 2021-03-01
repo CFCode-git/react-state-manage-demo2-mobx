@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {
+  HashRouter as Router,
+  Switch,
+  Link,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import Home from "./views/home/home";
+import fnMobx from "./views/fnMobx/fnMobx";
+import classMobx from "./views/classMobx/classMobx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ul>
+        <li>
+          <Link to="/">home</Link>
+        </li>
+        <li>
+          <Link to="/fnMobx">fnMobx</Link>
+        </li>
+        <li>
+          <Link to="/classMobx">classMobx</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Redirect exact from="/" to="/home" />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/fnMobx" component={fnMobx} />
+        <Route exact path="/classMobx" component={classMobx} />
+      </Switch>
+    </Router>
   );
 }
 

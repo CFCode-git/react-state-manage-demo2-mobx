@@ -1,0 +1,23 @@
+.fnMobx {
+  border: 1px solid red;
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin: 20px;
+  .count {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin: 20px;
+    font-size: 36px;
+  }
+  .calculator {
+    margin: 20px;
+    > button {
+      width: 64px;
+      height: 32px;
+      font-size: 32px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+}
